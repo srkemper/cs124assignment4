@@ -1,0 +1,28 @@
+<project>
+
+  <target name="clean">
+    <delete dir="classes"/>
+  </target>
+
+  <target name="compile">
+    <mkdir dir="classes"/>
+    <javac srcdir="." destdir="classes"  includeantruntime="false">
+      <classpath>
+      </classpath>
+    </javac>
+  </target>
+  
+  <target name="run">
+    <java classname="IRSystem" classpath="classes" fork="true">
+    </java>
+  </target>
+    
+  <target name="submit">
+    <java classname="Submit" fork="false">
+      <classpath>
+        <pathelement path="classes"/>
+    </classpath>
+    </java>
+  </target>
+
+</project>
